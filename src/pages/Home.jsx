@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import logo from "../assets/logo.png";
 import fire from "../assets/fire.mp4";
-import "@fontsource/cabin-sketch"; // chalk-style font
+import "@fontsource/cabin-sketch";
 
 export default function Home() {
-  const texts = ["Break the rules.", "Taste the difference."];
+  const texts = ["Break the rules", "Taste the Rowdy"];
   const [text, setText] = useState("");
   const [index, setIndex] = useState(0);
   const [subIndex, setSubIndex] = useState(0);
@@ -33,8 +33,8 @@ export default function Home() {
 
   return (
     <section
-      className="relative flex flex-col md:flex-row items-center justify-center text-white 
-      pt-10 sm:pt-12 md:pt-28 overflow-hidden min-h-[60vh] md:min-h-screen"
+      className="relative flex flex-col md:flex-row items-center justify-center 
+      text-white overflow-hidden h-[70vh] md:h-screen w-full"
     >
       {/* Background Video */}
       <video
@@ -42,76 +42,88 @@ export default function Home() {
         loop
         muted
         playsInline
-        className="absolute top-0 left-0 w-screen h-screen object-cover -z-10 opacity-60"
+        className="absolute top-0 left-0 w-full h-full object-cover -z-10 opacity-60"
       >
         <source src={fire} type="video/mp4" />
       </video>
 
       {/* Content Wrapper */}
-      <div
-        className="w-[90%] mx-auto flex flex-col md:flex-row items-center justify-center 
-        h-[60vh] md:h-auto scale-[0.95] sm:scale-[1] md:scale-100"
-      >
-        {/* LEFT - Logo & Rings */}
+      <div className="w-[90%] mx-auto flex flex-col md:flex-row items-center justify-center h-full gap-8">
+        
+        {/* LEFT - Rings & Logo */}
         <div
           className="relative flex items-center justify-center 
-          w-[180px] h-[180px] sm:w-[280px] sm:h-[280px] md:w-[520px] md:h-[520px] 
-          mb-6 md:mb-0"
+          w-full md:w-1/2 mb-6 md:mb-0 sm:mt-10
+          h-[180px] sm:h-[240px] md:h-[520px]"
         >
-          <div className="absolute w-[92%] h-[92%] rounded-full border-[3px] sm:border-[4px] border-dashed border-orange-400 animate-rotate"></div>
-          <div className="absolute w-[75%] h-[75%] rounded-full border-[4px] sm:border-[5px] border-dotted border-yellow-400 animate-rotateReverse"></div>
-          <div className="absolute w-[50%] h-[50%] rounded-full border border-yellow-400 animate-pulse-glow"></div>
+          {/* Outer Ring */}
+          <motion.div
+            initial={{ scale: 0, opacity: 0, rotate: -180 }}
+            animate={{ scale: 1, opacity: 1, rotate: 360 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            className="absolute aspect-square w-[70%] sm:w-[80%] md:w-[85%] 
+            rounded-full border-[3px] sm:border-[4px] md:border-[5px] 
+            border-dashed border-orange-400 animate-rotate"
+          ></motion.div>
 
-          <motion.img
-            src={logo}
-            alt="Rowdy Cafe Logo"
+          {/* Middle Ring */}
+          <motion.div
+            initial={{ scale: 0, opacity: 0, rotate: 180 }}
+            animate={{ scale: 1, opacity: 1, rotate: -360 }}
+            transition={{ duration: 1, ease: "easeOut", delay: 0.6 }}
+            className="absolute aspect-square w-[50%] sm:w-[60%] md:w-[65%] 
+            rounded-full border-[3px] sm:border-[4px] md:border-[5px] 
+            border-dotted border-yellow-400 animate-rotateReverse"
+          ></motion.div>
+
+          {/* Inner Glow Ring */}
+          <motion.div
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
-            className="relative w-32 h-32 sm:w-48 sm:h-48 md:w-80 md:h-80 rounded-full shadow-[0_0_40px_#facc15]"
+            transition={{ duration: 1, ease: "easeOut", delay: 0.10 }}
+            className="absolute aspect-square w-[35%] sm:w-[40%] md:w-[45%] 
+            rounded-full border border-yellow-400 shadow-[0_0_25px_#facc15] animate-pulse-glow"
+          ></motion.div>
+
+          {/* Logo (Static – No entry animation) */}
+          <img
+            src={logo}
+            alt="Rowdy Cafe Logo"
+            className="relative w-[35%] sm:w-[40%] md:w-[45%] 
+            rounded-full shadow-[0_0_45px_#ffffff]"
           />
         </div>
 
         {/* RIGHT - Text & Buttons */}
         <motion.div
-          className="flex flex-col items-center  text-center
-          space-y-3 sm:space-y-5 md:space-y-6 md:ml-16 z-10"
-          initial={{ x: 100, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 1 }}
+          className="flex flex-col items-center text-center md:items-start md:text-left 
+          z-10 w-full md:w-[65%] md:pl-10"
+          initial={{ y: 120, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.3, ease: [0.68, -0.55, 0.27, 1.55],  }}
         >
+          {/* Typewriter Text */}
           <motion.h1
-            className="font-['Cabin_Sketch'] text-white 
-            text-4xl sm:text-5xl md:text-8xl font-bold leading-tight 
-            drop-shadow-[0_0_15px_rgba(250,204,21,0.8)]"
-            initial={{ y: 50, opacity: 0 }}
+            className="font-['Cabin_Sketch'] text-white text-4xl sm:text-6xl md:text-8xl font-bold leading-tight
+            drop-shadow-[0_0_25px_rgba(255,255,255,0.9)] min-h-[90px] sm:min-h-[110px]"
+            initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 1, delay: 0.3 }}
-          >
-            Rowdy Café
-          </motion.h1>
-
-          <motion.p
-            className="text-xl sm:text-2xl md:text-5xl font-medium text-yellow-300 
-            h-[40px] min-h-[40px] w-full text-center "
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.6 }}
+            transition={{ duration: 0.6, ease: "easeOut",  }}
           >
             {text}
-            <span className="border-r-2 border-yellow-300 ml-1 animate-pulse"></span>
-          </motion.p>
+            <span className="border-r-4 border-white ml-2 animate-pulse"></span>
+          </motion.h1>
 
           {/* Buttons */}
           <motion.div
-            className="flex flex-row justify-around items-center 
-            gap-3 sm:gap-5 mt-3 sm:mt-4 w-full"
-            initial={{ y: 50, opacity: 0 }}
+            className="flex flex-row justify-center md:justify-start items-center 
+            gap-4 sm:gap-6 sm:mt-6 w-full flex-wrap"
+            initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 1, delay: 1 }}
+            transition={{ duration: 0.6, ease: [0.68, -0.55, 0.27, 1.55],  }}
           >
             <button
-              className="px-4 sm:px-6 py-2 sm:py-3 border border-yellow-400 text-yellow-400 
+              className="px-5 sm:px-7 py-2 sm:py-3 border border-yellow-400 text-yellow-400 
               font-['Cabin_Sketch'] text-base sm:text-lg md:text-xl rounded-full 
               flex items-center justify-center gap-2 hover:bg-yellow-400 hover:text-black 
               transition-all duration-300 hover:shadow-[0_0_25px_#facc15]"
@@ -121,7 +133,7 @@ export default function Home() {
             </button>
 
             <button
-              className="px-4 sm:px-6 py-2 sm:py-3 border border-yellow-400 text-yellow-400 
+              className="px-5 sm:px-7 py-2 sm:py-3 border border-yellow-400 text-yellow-400 
               font-['Cabin_Sketch'] text-base sm:text-lg md:text-xl rounded-full 
               flex items-center justify-center gap-2 hover:bg-yellow-400 hover:text-black 
               transition-all duration-300 hover:shadow-[0_0_25px_#facc15]"

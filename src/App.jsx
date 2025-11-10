@@ -1,18 +1,15 @@
-import { useState } from 'react'
-import Navbar from './components/Navbar'
-import Home from './pages/Home'
-import './App.css'
+import Home from "./pages/Home";
+import USP from "./pages/USP";
+import Navbar from "./components/Navbar";
 
-
-function App() {
-
-
+export default function App() {
   return (
-    <>
-    <Navbar/>
-    <Home/>
-    </>
-  )
+    <div id="smooth-wrapper">
+      <Navbar/>
+      <div id="smooth-content">
+        <Home />
+        <USP />
+      </div>
+    </div>
+  );
 }
-
-export default App

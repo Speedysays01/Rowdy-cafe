@@ -3,6 +3,8 @@
 @tailwind components; */
 @tailwind utilities;
 
+
+
 *{
   /* margin: 0;
   padding: 0; */
@@ -15,7 +17,14 @@ body {
   background-color: black;
 }
 
+#smooth-wrapper, #smooth-content {
+  height: 100%;
+  width: 100%;
+}
 
+html {
+  scroll-behavior: smooth;
+}
 
 
 /* ✅ Keep animations inside @theme */
