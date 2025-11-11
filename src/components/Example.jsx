@@ -1,5 +1,6 @@
 import { motion, useTransform, useScroll } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
+import FoodGridSection from "./FoodGridSection";
 
 import gourmet from "../assets/gourmet.mp4";
 import delivery from "../assets/delivery-scooter.mp4";
@@ -44,7 +45,7 @@ const HorizontalScrollCarousel = () => {
   return (
     <section
       ref={targetRef}
-      className="relative h-[200vh] sm:h-[200vh] md:h-[200vh] bg-yellow-400"
+      className="relative h-[200vh] sm:h-[200vh] md:h-[200vh] bg-yellow-400 z-10"
     >
       <div className="sticky top-0 flex h-[45vh] md:h-[60vh] items-center overflow-hidden">
         <h2 className="text-black font-bold text-xl w-full sm:text-2xl md:text-3xl mb-2 absolute top-5 left-1/2 -translate-x-1/2 z-10 text-center">
@@ -60,13 +61,19 @@ const HorizontalScrollCarousel = () => {
           ))}
         </motion.div>
       </div>
+
+
+
+ 
+
+<FoodGridSection/>
     </section>
   );
 };
 
 const Card = ({ usp }) => (
   <div
-    className="group bg-black rounded-2xl shadow-lg flex flex-col items-center justify-center
+    className="group bg-black z-10 rounded-2xl shadow-lg flex flex-col items-center justify-center
     px-4 py-5 sm:px-6 sm:py-6 md:px-8 md:py-8 
     transition-transform duration-300 hover:scale-105 w-[25rem]"
   >
