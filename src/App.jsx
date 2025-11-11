@@ -1,6 +1,7 @@
 import Home from "./pages/Home";
 import USP from "./pages/USP";
 import Navbar from "./components/Navbar";
+import Example from "./components/Example";
 
 export default function App() {
   return (
@@ -8,7 +9,8 @@ export default function App() {
       <Navbar/>
       <div id="smooth-content">
         <Home />
-        <USP />
+        {/* <USP /> */}
+        <Example/>
       </div>
     </div>
   );
