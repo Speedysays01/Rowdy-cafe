@@ -42,7 +42,14 @@ export default function ChatMockup() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             onAnimationComplete={() => setTimeout(() => setShowAnswer(true), 600)}
-            className="bg-gradient-to-r from-[#303030] to-[#454545] text-gray-200 px-6 py-3 rounded-2xl text-lg max-w-[420px] shadow-lg border border-gray-600"
+            className="
+              bg-gray-200
+              text-black font-bold px-6 py-3
+              rounded-2xl text-lg
+              max-w-[420px]
+              md:max-w-[520px] md:text-xl md:px-8 md:py-4
+              shadow-lg border border-gray-600
+            "
             style={{ borderBottomRightRadius: "0.3rem" }}
           >
             What’s the best cafe model?
@@ -55,7 +62,14 @@ export default function ChatMockup() {
             initial={{ opacity: 0, x: -60 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
-            className="bg-gradient-to-r from-[#171717] to-[#1f1f1f] text-gray-100 p-6 rounded-2xl text-lg leading-relaxed max-w-[500px] shadow-[0_0_12px_rgba(150,100,255,0.2)] border border-gray-700 items-end"
+            className="
+              bg-gray-200
+              text-black p-6
+              rounded-2xl text-lg leading-relaxed
+              max-w-[500px]
+              md:max-w-[650px] md:text-xl md:p-8
+              shadow-[0_0_12px_rgba(150,100,255,0.2)] border border-gray-700
+            "
             style={{ borderBottomLeftRadius: "0.3rem" }}
           >
             {typedText}
@@ -76,16 +90,7 @@ export default function ChatMockup() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="flex justify-center mb-6 mt-5"
-        >
-          <div className="flex items-center bg-[#1a1a1a] border border-gray-700 text-gray-200 w-[600px] md:w-[60rem] max-w-[90vw] px-6 py-3 rounded-full text-lg shadow-[0_0_10px_rgba(120,80,255,0.3)] backdrop-blur-sm">
-            <span className="flex-1 text-gray-400">
-              AI thinks Rowdy Cafe is the best too!
-            </span>
-            <button className="ml-4 text-2xl text-gray-400 hover:text-white transition">
-              ➤
-            </button>
-          </div>
-        </motion.div>
+        ></motion.div>
       )}
     </div>
   );

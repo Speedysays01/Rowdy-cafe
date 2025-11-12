@@ -1,6 +1,7 @@
 import { motion, useTransform, useScroll } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import FoodGridSection from "./FoodGridSection";
+import ChatMockup from "../pages/ChatMockup";
 
 import gourmet from "../assets/gourmet.mp4";
 import delivery from "../assets/delivery-scooter.mp4";
@@ -27,10 +28,10 @@ const HorizontalScrollCarousel = () => {
     const updateEndValue = () => {
       if (window.innerWidth < 768) {
         // mobile & small screens
-        setEndValue("-73%");
+        setEndValue("-93%");
       } else {
         // laptop & larger screens
-        setEndValue("-48%");
+        setEndValue("-68%");
       }
     };
 
@@ -60,13 +61,20 @@ const HorizontalScrollCarousel = () => {
             <Card key={usp.title} usp={usp} />
           ))}
         </motion.div>
+
+          
+
+
+
+
       </div>
 
 
-
+<section className="sticky top-[17rem] sm:top-[30rem] bg-black text-white py-16 sm:py-24 h- flex flex-col justify-center overflow-hidden">
+  <ChatMockup/>
+</section>
  
 
-<FoodGridSection/>
     </section>
   );
 };

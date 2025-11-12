@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { X, Menu } from "lucide-react";
+import rowdyman from '../assets/logo.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,9 +19,11 @@ const Navbar = () => {
       <div className="mx-auto px-6 md:px-12 lg:px-20">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <h1 className="text-2xl font-extrabold text-yellow-400 tracking-widest font-mono select-none">
+          {/* <h1 className="text-2xl font-extrabold text-yellow-400 tracking-widest font-mono select-none">
             ROWDY CAFE
-          </h1>
+          </h1> */}
+
+          <img src={rowdyman} alt="Rowdyman" className="w-[3rem] h-auto" />
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8 flex justify-around w-200 ml-5">

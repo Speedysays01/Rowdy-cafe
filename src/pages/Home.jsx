@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import logo from "../assets/logo.png";
+import logo from "../assets/title.jpg";
 import fire from "../assets/fire.mp4";
 import "@fontsource/cabin-sketch";
 
@@ -57,41 +57,57 @@ export default function Home() {
           h-[180px] sm:h-[240px] md:h-[520px]"
         >
           {/* Outer Ring */}
-          <motion.div
+          {/* <motion.div
             initial={{ scale: 0, opacity: 0, rotate: -180 }}
             animate={{ scale: 1, opacity: 1, rotate: 360 }}
             transition={{ duration: 1, ease: "easeOut" }}
             className="absolute aspect-square w-[70%] sm:w-[80%] md:w-[85%] 
             rounded-full border-[3px] sm:border-[4px] md:border-[5px] 
             border-dashed border-orange-400 animate-rotate"
-          ></motion.div>
+          ></motion.div> */}
 
           {/* Middle Ring */}
-          <motion.div
+          {/* <motion.div
             initial={{ scale: 0, opacity: 0, rotate: 180 }}
             animate={{ scale: 1, opacity: 1, rotate: -360 }}
             transition={{ duration: 1, ease: "easeOut", delay: 0.6 }}
             className="absolute aspect-square w-[50%] sm:w-[60%] md:w-[65%] 
             rounded-full border-[3px] sm:border-[4px] md:border-[5px] 
             border-dotted border-yellow-400 animate-rotateReverse"
-          ></motion.div>
+          ></motion.div> */}
 
           {/* Inner Glow Ring */}
-          <motion.div
+          {/* <motion.div
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 1, ease: "easeOut", delay: 0.10 }}
             className="absolute aspect-square w-[35%] sm:w-[40%] md:w-[45%] 
             rounded-full border border-yellow-400 shadow-[0_0_25px_#facc15] animate-pulse-glow"
-          ></motion.div>
+          ></motion.div> */}
 
           {/* Logo (Static – No entry animation) */}
-          <img
-            src={logo}
-            alt="Rowdy Cafe Logo"
-            className="relative w-[35%] sm:w-[40%] md:w-[45%] 
-            rounded-full shadow-[0_0_45px_#ffffff]"
-          />
+        <motion.img
+        src={logo}
+        alt="Rowdy Cafe Logo"
+        className="relative w-[75%] sm:w-[70%] md:w-[80%] rounded-full"
+        initial={{
+          scale: 3,
+          opacity: 0,
+          rotate: 15,
+          y: -300,
+        }}
+        animate={{
+          scale: [3, 1, 1.05, 1],
+          opacity: [0, 1, 1, 1],
+          rotate: [15, 0, -3, 0],
+          y: [ -300, 0, -10, 0 ],
+        }}
+        transition={{
+          duration: 1.2,
+          ease: [0.3, 1.1, 0.3, 1],
+        }}
+      
+      />
         </div>
 
         {/* RIGHT - Text & Buttons */}
