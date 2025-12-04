@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@fontsource/cabin-sketch": "^5.2.8",
+    "@lottiefiles/react-lottie-player": "^3.6.0",
     "@tailwindcss/vite": "^4.1.17",
     "framer-motion": "^12.23.24",
     "gsap": "^3.13.0",

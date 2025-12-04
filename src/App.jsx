@@ -5,7 +5,10 @@ import Navbar from "./components/Navbar";
 import Example from "./components/Example";
 import ChatMockup from "./pages/ChatMockup";
 import Loader from "./components/Loader";
-
+import Slider from "./components/Slider";
+import ROI from "./components/ROI";
+import OwnerCard from "./pages/OwnerCard";
+import Investment from "./pages/Investment";
 export default function App() {
   const [loaded, setLoaded] = useState(false);
 
@@ -17,9 +20,10 @@ export default function App() {
           <Navbar />
           <div id="smooth-content">
             <Home />
-            {/* <USP /> */}
-            <Example />
-            {/* <ChatMockup/> */}
+            <Slider/>
+            <OwnerCard/>
+          <Investment/>
+          <ROI/>
           </div>
         </div>
       )}
